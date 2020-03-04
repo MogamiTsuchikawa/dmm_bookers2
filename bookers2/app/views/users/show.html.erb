@@ -9,6 +9,11 @@
     </ul>
 </div>
 <% end %>
+<% if flash[:notice] %>
+      <div class="flash">
+        <%= flash[:notice] %>
+      </div>
+<% end %>
     <div class='row'>
         <div class='col-xs-3'>
             <%= render 'users/userinfo', book: @book,user: @user %>
