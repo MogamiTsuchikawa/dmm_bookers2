@@ -10,9 +10,9 @@
     </div>
     <% end %>
     <% if flash[:notice] %>
-      <div class="flash">
+    <div class="flash">
         <%= flash[:notice] %>
-      </div>
+    </div>
     <% end %>
     <div class='row'>
         <div class='col-xs-3'>
@@ -36,7 +36,8 @@
                     <% @users.each do |u| %>
                     <tr>
                         <td><a href="/users/<%= u.id %>">
-                                <%= attachment_image_tag u, :profile_image ,:fill,40,40 %>
+                                <%= attachment_image_tag u, :profile_image ,:fill,40,40, fallback: "noimage.jpg" %>
+                                
                             </a> </td>
                         <td>
 

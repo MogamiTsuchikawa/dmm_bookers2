@@ -14,7 +14,9 @@
         <% books.each do |eb| %>
         <tr>
             <td><a href="/users/<%= eb.user_id %>">
-                    <%= attachment_image_tag eb.user, :profile_image ,:fill,40,40 %>
+                    
+                    <%= attachment_image_tag eb.user, :profile_image ,:fill,40,40, fallback: "noimage.jpg" %>
+                    
                 </a> </td>
             <td>
                 <%= link_to book_path(eb.id) do %>

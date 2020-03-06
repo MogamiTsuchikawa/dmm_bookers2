@@ -3,7 +3,11 @@
 <table class='table'>
     <tr>
         <div class="block-image">
-            <div class="view view-first"><%= attachment_image_tag @user, :profile_image ,:fill,100,100 %></div>
+            <div class="view view-first">
+            
+            <%= attachment_image_tag @user, :profile_image ,:fill,100,100, fallback: "noimage.jpg" %>
+            
+            </div>
         </div>
     </tr>
     <tr>

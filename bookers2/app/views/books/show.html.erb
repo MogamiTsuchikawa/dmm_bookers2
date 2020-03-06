@@ -10,9 +10,9 @@
     </div>
     <% end %>
     <% if flash[:notice] %>
-      <div class="flash">
+    <div class="flash">
         <%= flash[:notice] %>
-      </div>
+    </div>
     <% end %>
     <div class='row'>
         <div class='col-xs-3'>
@@ -38,7 +38,9 @@
                 <tbody>
                     <tr>
                         <td><a href="/users/<%= @target.user_id %>">
-                                <%= attachment_image_tag @target.user, :profile_image ,:fill,100,100 %><br>
+                                
+                                <%= attachment_image_tag @target.user, :profile_image ,:fill,40,40, fallback: "noimage.jpg" %>
+                                
                                 <%= @target.user.name %>
                             </a> </td>
                         <td>
